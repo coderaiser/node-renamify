@@ -23,7 +23,7 @@
     "watch:coverage": "npm run watcher -- npm run coverage",
     "lint": "eslint lib test",
     "build": "redrun clean init 6to5 legacy:*",
-    "init": "mkdirp dist legacy",
+    "init": "mkdirp legacy",
     "wisdom": "npm run build",
     "clean": "rimraf legacy dist",
     "coverage": "nyc npm test",
