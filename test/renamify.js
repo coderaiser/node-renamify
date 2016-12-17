@@ -51,8 +51,6 @@ test('renamify: arguments: names length mismatch', (t) => {
 });
 
 test('renamify: names length is zero', (t) => {
-    const error = Error('Names lengths mismatch');
-    
     renamify('/', [], [], () => {
         t.pass('should call callback');
         t.end();
@@ -60,7 +58,6 @@ test('renamify: names length is zero', (t) => {
 });
 
 test('renamify: rename: from', (t) => {
-    const error = Error('Names lengths mismatch');
     const {rename} = fs;
     const name = 'a';
     const newName = 'b';
@@ -68,6 +65,7 @@ test('renamify: rename: from', (t) => {
     fs.rename = (from, to, fn) => {
         t.equal(name, from, 'should rename file');
         fs.rename = rename;
+        fn();
         t.end();
     };
     
@@ -75,7 +73,6 @@ test('renamify: rename: from', (t) => {
 });
 
 test('renamify: rename: to', (t) => {
-    const error = Error('Names lengths mismatch');
     const {rename} = fs;
     const name = 'a';
     const newName = 'b';
@@ -83,6 +80,7 @@ test('renamify: rename: to', (t) => {
     fs.rename = (from, to, fn) => {
         t.equal(newName, to, 'should rename file');
         fs.rename = rename;
+        fn();
         t.end();
     };
     
@@ -90,7 +88,6 @@ test('renamify: rename: to', (t) => {
 });
 
 test('renamify: rename: fn', (t) => {
-    const error = Error('Names lengths mismatch');
     const {rename} = fs;
     const name = 'a';
     const newName = 'b';
@@ -107,7 +104,6 @@ test('renamify: rename: fn', (t) => {
 });
 
 test('renamify: rename: fn', (t) => {
-    const error = Error('Names lengths mismatch');
     const {rename} = fs;
     const name = 'a';
     const newName = 'b';
@@ -124,7 +120,6 @@ test('renamify: rename: fn', (t) => {
 });
 
 test('renamify: rename: error', (t) => {
-    const error = Error('Names lengths mismatch');
     const name = 'a';
     const newName = 'b';
     
@@ -137,7 +132,6 @@ test('renamify: rename: error', (t) => {
 
 test('renamify: rename', (t) => {
     const {join} = path;
-    const error = Error('Names lengths mismatch');
     const names = [
         'a.txt',
         'b.txt',
@@ -152,7 +146,7 @@ test('renamify: rename', (t) => {
     const namesFrom = names.map((name) => join(dir, name));
     const namesTo = newNames.map((name) => join(dir, name));
     
-    renamify(dir, names, newNames, (e) => {
+    renamify(dir, names, newNames, () => {
         const list = fs.readdirSync(dir);
         
         t.deepEqual(list, newNames, 'should rename files');
