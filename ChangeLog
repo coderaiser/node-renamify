@@ -1,3 +1,9 @@
+2016.12.17, v1.0.2
+
+feature:
+- (package) init: rm dist
+
+
 2016.12.17, v1.0.1
 
 fix:
