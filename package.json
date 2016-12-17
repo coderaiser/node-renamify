@@ -1,0 +1,48 @@
+{
+  "name": "renamify",
+  "version": "1.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "rename group of files from a directory",
+  "homepage": "http://github.com/coderaiser/node-renamify",
+  "main": "lib/renamify.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/node-renamify.git"
+  },
+  "keywords": [
+    "file",
+    "folder",
+    "rename",
+    "group",
+    "name"
+  ],
+  "scripts": {
+    "test": "tape test/*.js",
+    "watcher": "nodemon -w test -w lib --exec",
+    "watch:test": "npm run watcher -- npm test",
+    "watch:coverage": "npm run watcher -- npm run coverage",
+    "lint": "eslint lib test",
+    "build": "redrun clean init 6to5 legacy:*",
+    "init": "mkdirp dist legacy",
+    "wisdom": "npm run build",
+    "clean": "rimraf legacy dist",
+    "coverage": "nyc npm test",
+    "report": "nyc report --reporter=text-lcov | coveralls",
+    "6to5": "buble lib -o legacy/lib",
+    "legacy:index": "echo \"module.exports = require('./lib/renamify');\" > legacy/index.js"
+  },
+  "dependencies": {
+    "currify": "^2.0.3",
+    "itchy": "^1.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "buble": "^0.14.2",
+    "coveralls": "^2.11.9",
+    "eslint": "^3.10.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.0.0",
+    "redrun": "^5.9.4",
+    "tape": "^4.5.1"
+  }
+}
