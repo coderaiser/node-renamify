@@ -12,16 +12,16 @@ Rename group of files from a directory.
 const renamify = require('renamify');
 
 const dir = '/';
-const names = [
+const from = [
     'bin'
 ];
 
-const newNames = [
+const to = [
     'super-bin'
 ];
 
-renamify(dir, names, newNames, (error) => {
-    console.log(error|| 'done');
+renamify(dir, from, to, (error) => {
+    console.log(error || 'done');
 });
 ```
 

@@ -13,24 +13,17 @@ test('renamify: arguments: no', (t) => {
     t.end();
 });
 
-test('renamify: arguments: names', (t) => {
+test('renamify: arguments: from', (t) => {
     const fn = () => renamify('/');
     
-    t.throws(fn, /names should be an array!/, 'should throw when no names');
+    t.throws(fn, /from should be an array!/, 'should throw when no from');
     t.end();
 });
 
-test('renamify: arguments: newNames', (t) => {
+test('renamify: arguments: to', (t) => {
     const fn = () => renamify('/', []);
     
-    t.throws(fn, /newNames should be an array!/, 'should throw when no newNames');
-    t.end();
-});
-
-test('renamify: arguments: newNames', (t) => {
-    const fn = () => renamify('/', []);
-    
-    t.throws(fn, /newNames should be an array!/, 'should throw when no newNames');
+    t.throws(fn, /to should be an array!/, 'should throw when no to');
     t.end();
 });
 
