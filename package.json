@@ -39,7 +39,7 @@
   "devDependencies": {
     "buble": "^0.15.1",
     "coveralls": "^2.11.9",
-    "eslint": "^3.10.2",
+    "eslint": "^4.0.0",
     "nodemon": "^1.11.0",
     "nyc": "^11.0.2",
     "redrun": "^5.9.4",
