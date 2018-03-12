@@ -33,6 +33,10 @@ In old `node.js` environments that not fully supports `es2015`, `renamify` could
 var renamify = require('renamify/legacy');
 ```
 
+## Related
+
+- [renamify-cli](https://github.com/coderaiser/node-renamify-cli "renamify-cli") - CLI rename group of files from a directory.
+
 ## License
 
 MIT
