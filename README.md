@@ -43,11 +43,11 @@ MIT
 
 [NPMIMGURL]:                https://img.shields.io/npm/v/renamify.svg?style=flat
 [BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/node-renamify/master.svg?style=flat
-[DependencyStatusIMGURL]:   https://img.shields.io/gemnasium/coderaiser/node-renamify.svg?style=flat
+[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/node-renamify.svg?style=flat
 [LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
 [NPMURL]:                   https://npmjs.org/package/renamify "npm"
 [BuildStatusURL]:           https://travis-ci.org/coderaiser/node-renamify  "Build Status"
-[DependencyStatusURL]:      https://gemnasium.com/coderaiser/node-renamify "Dependency Status"
+[DependencyStatusURL]:      https://david-dm.org/coderaiser/node-renamify "Dependency Status"
 [LicenseURL]:               https://tldrlegal.com/license/mit-license "MIT License"
 
 [CoverageURL]:              https://coveralls.io/github/coderaiser/node-renamify?branch=master
