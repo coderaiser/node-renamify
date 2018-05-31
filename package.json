@@ -21,15 +21,11 @@
     "watcher": "nodemon -w test -w lib --exec",
     "watch:test": "npm run watcher -- npm test",
     "watch:coverage": "npm run watcher -- npm run coverage",
-    "lint": "eslint lib test",
-    "build": "redrun clean init 6to5 legacy:*",
-    "init": "mkdirp legacy",
-    "wisdom": "npm run build",
-    "clean": "rimraf legacy dist",
+    "lint": "redrun lint:*",
+    "lint:lib": "eslint -c .eslintrc.server lib",
+    "lint:server": "eslint test",
     "coverage": "nyc npm test",
-    "report": "nyc report --reporter=text-lcov | coveralls",
-    "6to5": "buble lib -o legacy/lib",
-    "legacy:index": "echo \"module.exports = require('./lib/renamify');\" > legacy/index.js"
+    "report": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "currify": "^2.0.3",
@@ -37,12 +33,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "buble": "^0.19.2",
     "coveralls": "^3.0.0",
     "eslint": "^4.0.0",
+    "eslint-plugin-node": "^6.0.1",
     "nodemon": "^1.11.0",
     "nyc": "^11.0.2",
     "redrun": "^6.0.1",
     "tape": "^4.5.1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }

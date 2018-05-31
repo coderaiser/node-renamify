@@ -25,14 +25,6 @@ renamify(dir, from, to, (error) => {
 });
 ```
 
-## Environments
-
-In old `node.js` environments that not fully supports `es2015`, `renamify` could be used with:
-
-```js
-var renamify = require('renamify/legacy');
-```
-
 ## Related
 
 - [renamify-cli](https://github.com/coderaiser/node-renamify-cli "renamify-cli") - CLI rename group of files from a directory.
