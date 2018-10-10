@@ -8,6 +8,8 @@ Rename group of files from a directory.
 
 ## API
 
+`renamify` can be used as a `promise`:
+
 ```js
 const renamify = require('renamify');
 
@@ -20,9 +22,28 @@ const to = [
     'super-bin'
 ];
 
-renamify(dir, from, to, (error) => {
-    console.log(error || 'done');
-});
+renamify(dir, from, to)
+    .then(console.log)
+    .catch(console.error);
+```
+
+Or with `es2018` `async-await` syntax:
+
+```js
+const renamify = require('renamify');
+const tryToCatch = require('try-to-catch');
+
+const dir = '/';
+const from = [
+    'bin'
+];
+
+const to = [
+    'super-bin'
+];
+
+const [error] = await tryToCatch(renamify, dir, from, to);
+console.log(error || 'done');
 ```
 
 ## Related
