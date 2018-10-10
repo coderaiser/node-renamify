@@ -1,3 +1,9 @@
+2018.10.10, v3.0.1
+
+fix:
+- (renamify) callback -> promise
+
+
 2018.10.10, v3.0.0
 
 feature:
