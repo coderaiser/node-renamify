@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 
-const test = require('tape');
+const test = require('supertape');
 const tryToCatch = require('try-to-catch');
 const {reRequire} = require('mock-require');
 const renamify = require('..');
