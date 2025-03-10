@@ -1,33 +1,40 @@
 # Renamify [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
+[BuildStatusURL]: https://github.com/coderaiser/node-renamify/actions?query=workflow%3A%22Node+CI%22 "Build Status"
+[BuildStatusIMGURL]: https://github.com/coderaiser/node-renamify/workflows/Node%20CI/badge.svg
+[NPMIMGURL]: https://img.shields.io/npm/v/renamify.svg?style=flat
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[NPMURL]: https://npmjs.org/package/renamify "npm"
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[CoverageURL]: https://coveralls.io/github/coderaiser/node-renamify?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-renamify/badge.svg?branch=master&service=github
+
 Rename group of files from a directory.
 
 ## Install
 
-`npm i renamify --save`
+```
+npm i renamify --save
+```
 
 ## API
 
-`renamify` can be used as a `promise`:
-
 ```js
-const renamify = require('renamify');
+import renamify from 'renamify';
 
 const dir = '/';
 const from = ['bin'];
 
 const to = ['super-bin'];
 
-renamify(dir, from, to)
-    .then(console.log)
-    .catch(console.error);
+await renamify(dir, from, to);
 ```
 
-Or with `es2018` `async-await` syntax:
+Or with ``try-to-catch`:
 
 ```js
-const renamify = require('renamify');
-const tryToCatch = require('try-to-catch');
+import renamify from 'renamify';
+import tryToCatch from 'try-to-catch';
 
 const dir = '/';
 const from = ['bin'];
@@ -46,12 +53,3 @@ console.log(error || 'done');
 ## License
 
 MIT
-
-[NPMIMGURL]: https://img.shields.io/npm/v/renamify.svg?style=flat
-[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/node-renamify/master.svg?style=flat
-[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
-[NPMURL]: https://npmjs.org/package/renamify "npm"
-[BuildStatusURL]: https://travis-ci.org/coderaiser/node-renamify "Build Status"
-[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
-[CoverageURL]: https://coveralls.io/github/coderaiser/node-renamify?branch=master
-[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-renamify/badge.svg?branch=master&service=github
