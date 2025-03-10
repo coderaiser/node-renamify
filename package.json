@@ -1,49 +1,50 @@
 {
-  "name": "renamify",
-  "version": "3.0.2",
-  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
-  "description": "rename group of files from a directory",
-  "homepage": "http://github.com/coderaiser/node-renamify",
-  "main": "lib/renamify.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/coderaiser/node-renamify.git"
-  },
-  "keywords": [
-    "file",
-    "folder",
-    "rename",
-    "group",
-    "name"
-  ],
-  "scripts": {
-    "test": "madrun test",
-    "watcher": "madrun watcher",
-    "watch:test": "madrun watch:test",
-    "watch:coverage": "madrun watch:coverage",
-    "fix:lint": "madrun fix:lint",
-    "lint": "madrun lint",
-    "lint:server": "madrun lint:server",
-    "coverage": "madrun coverage",
-    "report": "madrun report"
-  },
-  "dependencies": {
-    "currify": "^4.0.0"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "coveralls": "^3.0.0",
-    "eslint": "^9.22.0",
-    "eslint-plugin-putout": "^25.1.2",
-    "madrun": "^10.2.5",
-    "mock-require": "^3.0.2",
-    "nodemon": "^3.1.9",
-    "putout": "^38.5.4",
-    "redlint": "^3.19.1",
-    "supertape": "^10.10.0",
-    "try-to-catch": "^3.0.1"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  }
+    "name": "renamify",
+    "version": "3.0.2",
+    "type": "commonjs",
+    "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+    "description": "rename group of files from a directory",
+    "homepage": "http://github.com/coderaiser/node-renamify",
+    "main": "lib/renamify.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/coderaiser/node-renamify.git"
+    },
+    "keywords": [
+        "file",
+        "folder",
+        "rename",
+        "group",
+        "name"
+    ],
+    "scripts": {
+        "test": "madrun test",
+        "watcher": "madrun watcher",
+        "watch:test": "madrun watch:test",
+        "watch:coverage": "madrun watch:coverage",
+        "fix:lint": "madrun fix:lint",
+        "lint": "madrun lint",
+        "lint:server": "madrun lint:server",
+        "coverage": "madrun coverage",
+        "report": "madrun report"
+    },
+    "dependencies": {
+        "currify": "^4.0.0"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "coveralls": "^3.0.0",
+        "eslint": "^9.22.0",
+        "eslint-plugin-putout": "^25.1.2",
+        "madrun": "^10.2.5",
+        "mock-require": "^3.0.2",
+        "nodemon": "^3.1.9",
+        "putout": "^38.5.4",
+        "redlint": "^3.19.1",
+        "supertape": "^10.10.0",
+        "try-to-catch": "^3.0.1"
+    },
+    "engines": {
+        "node": ">=8.0.0"
+    }
 }
