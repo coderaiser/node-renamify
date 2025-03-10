@@ -33,13 +33,12 @@
   "license": "MIT",
   "devDependencies": {
     "coveralls": "^3.0.0",
-    "eslint": "^6.4.0",
+    "eslint": "^9.22.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-putout": "^2.0.0",
     "madrun": "^3.0.5",
     "mock-require": "^3.0.2",
     "nodemon": "^1.11.0",
-    "nyc": "^14.1.1",
     "putout": "^6.1.0",
     "supertape": "^1.2.3",
     "try-to-catch": "^1.0.2"
