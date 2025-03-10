@@ -4,3 +4,6 @@ npm-debug.log
 
 *.swp
 
+.idea
+yarn-error.log
+coverage

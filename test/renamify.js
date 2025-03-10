@@ -1,17 +1,18 @@
-'use strict';
+import path, {dirname} from 'node:path';
+import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
+import test, {stub} from 'supertape';
+import tryToCatch from 'try-to-catch';
+import renamify from '../lib/renamify.js';
 
-const path = require('path');
-const fs = require('fs');
-
-const test = require('supertape');
-const tryToCatch = require('try-to-catch');
-const {reRequire} = require('mock-require');
-const renamify = require('..');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const empty = () => {};
 
 test('renamify: arguments: no', async (t) => {
     const [e] = await tryToCatch(renamify);
+    
     t.equal(e.message, 'dir should be a string!', 'should throw when no fn');
     t.end();
 });
@@ -46,68 +47,15 @@ test('renamify: names length is zero', async (t) => {
 });
 
 test('renamify: rename: from', async (t) => {
-    const {rename} = fs;
     const name = 'a';
     const newName = 'b';
+    const rename = stub();
     
-    fs.rename = (from, to, fn) => {
-        t.equal(name, from, 'should rename file');
-        fs.rename = rename;
-        fn();
-        t.end();
-    };
+    await renamify('', [name], [newName], {
+        rename,
+    });
     
-    const renamify = reRequire('..');
-    await renamify('', [name], [newName], empty);
-});
-
-test('renamify: rename: to', async (t) => {
-    const {rename} = fs;
-    const name = 'a';
-    const newName = 'b';
-    
-    fs.rename = (from, to, fn) => {
-        t.equal(newName, to, 'should rename file');
-        fs.rename = rename;
-        fn();
-        t.end();
-    };
-    
-    const renamify = reRequire('..');
-    await renamify('', [name], [newName], empty);
-});
-
-test('renamify: rename: fn', async (t) => {
-    const {rename} = fs;
-    const name = 'a';
-    const newName = 'b';
-    
-    fs.rename = (from, to, fn) => {
-        fs.rename = rename;
-        fn();
-    };
-    
-    const renamify = reRequire('..');
-    await renamify('/', [name], [newName]);
-    
-    t.pass('should call fn after renaming');
-    t.end();
-});
-
-test('renamify: rename: fn', async (t) => {
-    const {rename} = fs;
-    const name = 'a';
-    const newName = 'b';
-    
-    fs.rename = (from, to, fn) => {
-        fs.rename = rename;
-        fn();
-    };
-    
-    const renamify = reRequire('..');
-    renamify('/', [name], [newName]);
-    
-    t.pass('should call fn after renaming');
+    t.calledWith(rename, [name, newName]);
     t.end();
 });
 
@@ -143,10 +91,9 @@ test('renamify: rename', async (t) => {
     
     t.deepEqual(list, newNames, 'should rename files');
     
-    namesTo.forEach((name, i) => {
+    for (const [i, name] of namesTo.entries()) {
         fs.renameSync(name, namesFrom[i]);
-    });
+    }
     
     t.end();
 });
-

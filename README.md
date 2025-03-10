@@ -1,4 +1,4 @@
-# Renamify [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Dependency Status][DependencyStatusIMGURL]][DependencyStatusURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
+# Renamify [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
 Rename group of files from a directory.
 
@@ -14,13 +14,9 @@ Rename group of files from a directory.
 const renamify = require('renamify');
 
 const dir = '/';
-const from = [
-    'bin'
-];
+const from = ['bin'];
 
-const to = [
-    'super-bin'
-];
+const to = ['super-bin'];
 
 renamify(dir, from, to)
     .then(console.log)
@@ -34,15 +30,12 @@ const renamify = require('renamify');
 const tryToCatch = require('try-to-catch');
 
 const dir = '/';
-const from = [
-    'bin'
-];
+const from = ['bin'];
 
-const to = [
-    'super-bin'
-];
+const to = ['super-bin'];
 
 const [error] = await tryToCatch(renamify, dir, from, to);
+
 console.log(error || 'done');
 ```
 
@@ -54,15 +47,11 @@ console.log(error || 'done');
 
 MIT
 
-[NPMIMGURL]:                https://img.shields.io/npm/v/renamify.svg?style=flat
-[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/node-renamify/master.svg?style=flat
-[DependencyStatusIMGURL]:   https://img.shields.io/david/coderaiser/node-renamify.svg?style=flat
-[LicenseIMGURL]:            https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
-[NPMURL]:                   https://npmjs.org/package/renamify "npm"
-[BuildStatusURL]:           https://travis-ci.org/coderaiser/node-renamify  "Build Status"
-[DependencyStatusURL]:      https://david-dm.org/coderaiser/node-renamify "Dependency Status"
-[LicenseURL]:               https://tldrlegal.com/license/mit-license "MIT License"
-
-[CoverageURL]:              https://coveralls.io/github/coderaiser/node-renamify?branch=master
-[CoverageIMGURL]:           https://coveralls.io/repos/coderaiser/node-renamify/badge.svg?branch=master&service=github
-
+[NPMIMGURL]: https://img.shields.io/npm/v/renamify.svg?style=flat
+[BuildStatusIMGURL]: https://img.shields.io/travis/coderaiser/node-renamify/master.svg?style=flat
+[LicenseIMGURL]: https://img.shields.io/badge/license-MIT-317BF9.svg?style=flat
+[NPMURL]: https://npmjs.org/package/renamify "npm"
+[BuildStatusURL]: https://travis-ci.org/coderaiser/node-renamify "Build Status"
+[LicenseURL]: https://tldrlegal.com/license/mit-license "MIT License"
+[CoverageURL]: https://coveralls.io/github/coderaiser/node-renamify?branch=master
+[CoverageIMGURL]: https://coveralls.io/repos/coderaiser/node-renamify/badge.svg?branch=master&service=github

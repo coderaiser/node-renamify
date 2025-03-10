@@ -1,13 +1,12 @@
-'use strict';
+import {run} from 'madrun';
 
-module.exports = {
-    'test': () => 'madrun test',
-    'watcher': () => 'madrun watcher',
-    'watch:test': () => 'madrun watch:test',
-    'watch:coverage': () => 'madrun watch:coverage',
-    'fix:lint': () => 'madrun fix:lint',
+export default {
+    'test': () => `tape 'test/*.js'`,
+    'watcher': () => 'nodemon -w test -w lib --exec',
+    'watch:test': () => run('watcher', 'npm test'),
+    'watch:coverage': () => run('watcher', 'npm run coverage'),
+    'fix:lint': () => run('lint', '--fix'),
     'lint': () => 'putout .',
-    'lint:server': () => 'madrun lint:server',
-    'coverage': () => 'madrun coverage',
-    'report': () => 'madrun report',
+    'coverage': async () => `c8 ${await run('test')}`,
+    'report': () => 'c8 report --reporter=lcov',
 };
