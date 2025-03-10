@@ -34,12 +34,12 @@
   "devDependencies": {
     "coveralls": "^3.0.0",
     "eslint": "^9.22.0",
-    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-putout": "^25.1.2",
     "madrun": "^10.2.5",
     "mock-require": "^3.0.2",
     "nodemon": "^3.1.9",
     "putout": "^38.5.4",
+    "redlint": "^3.19.1",
     "supertape": "^10.10.0",
     "try-to-catch": "^3.0.1"
   },
