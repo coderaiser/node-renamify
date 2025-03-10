@@ -34,7 +34,7 @@
   "devDependencies": {
     "coveralls": "^3.0.0",
     "eslint": "^9.22.0",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-putout": "^2.0.0",
     "madrun": "^3.0.5",
     "mock-require": "^3.0.2",
