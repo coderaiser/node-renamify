@@ -1,3 +1,18 @@
+2025.03.10, v4.0.0
+
+feature:
+- 59c82e8 renamify: c8 v10.1.3
+- 1280c82 renamify: drop support of node < 18
+- a1ca5ba renamify: redlint v3.19.1
+- a932354 renamify: try-to-catch v3.0.1
+- 381ec23 renamify: supertape v10.10.0
+- 54ed48b renamify: putout v38.5.4
+- 7b7b299 renamify: nodemon v3.1.9
+- 7a8ac86 renamify: madrun v10.2.5
+- fc3e814 renamify: eslint-plugin-putout v25.1.2
+- de8fd7d renamify: eslint-plugin-node v11.1.0
+- f24210f renamify: eslint v9.22.0
+
 2019.09.19, v3.0.2
 
 feature:
