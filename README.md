@@ -30,6 +30,19 @@ const to = ['super-bin'];
 await renamify(dir, from, to);
 ```
 
+Full:
+
+```js
+import renamify from 'renamify';
+
+const dir = '/';
+const from = ['/bin/hello'];
+
+const to = ['/super-bin'];
+
+await renamify(dir, from, to
+```
+
 Or with ``try-to-catch`:
 
 ```js

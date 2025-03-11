@@ -8,8 +8,6 @@ import renamify from '../lib/renamify.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const empty = () => {};
-
 test('renamify: arguments: no', async (t) => {
     const [e] = await tryToCatch(renamify);
     
@@ -87,6 +85,36 @@ test('renamify: rename', async (t) => {
     const namesTo = newNames.map((name) => join(dir, name));
     
     await renamify(dir, names, newNames);
+    const list = fs.readdirSync(dir);
+    
+    t.deepEqual(list, newNames, 'should rename files');
+    
+    for (const [i, name] of namesTo.entries()) {
+        fs.renameSync(name, namesFrom[i]);
+    }
+    
+    t.end();
+});
+
+test('renamify: rename: full', async (t) => {
+    const {join} = path;
+    const names = [
+        'a.txt',
+        'b.txt',
+    ];
+    
+    const newNames = [
+        'c.txt',
+        'd.txt',
+    ];
+    
+    const dir = join(__dirname, 'fixture', 'two');
+    const namesFrom = names.map((name) => join(dir, name));
+    const namesTo = newNames.map((name) => join(dir, name));
+    
+    await renamify(dir, namesFrom, namesTo, {
+        full: true,
+    });
     const list = fs.readdirSync(dir);
     
     t.deepEqual(list, newNames, 'should rename files');
