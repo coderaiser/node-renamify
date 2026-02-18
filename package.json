@@ -1,6 +1,6 @@
 {
   "name": "renamify",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "type": "module",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "rename group of files from a directory",

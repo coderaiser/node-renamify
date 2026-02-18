@@ -1,3 +1,15 @@
+2026.02.18, v5.0.0
+
+feature:
+- 97bca5f renamify: drop support of node < 22
+- a15773d renamify: try-to-catch v4.0.5
+- 0d70f27 renamify: supertape v12.5.0
+- 096b24d renamify: redlint v6.0.0
+- afcd55c renamify: putout v42.0.5
+- ec1eeaa renamify: madrun v13.0.0
+- ef686b0 renamify: eslint-plugin-putout v31.0.0
+- c2ead92 renamify: eslint v10.0.0
+
 2025.03.11, v4.1.0
 
 feature:
