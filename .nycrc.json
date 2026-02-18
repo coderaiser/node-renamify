@@ -2,12 +2,12 @@
     "check-coverage": true,
     "all": true,
     "exclude": [
-        ".*",
-        "**/bin",
         "**/*.spec.*",
-        "test",
+        "**/*.config.*",
+        "**/bin",
         "**/fixture",
-        "**/*.config.*"
+        ".*",
+        "test"
     ],
     "branches": 100,
     "lines": 100,

@@ -2,7 +2,7 @@ import path, {dirname} from 'node:path';
 import fs from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import test, {stub} from 'supertape';
-import tryToCatch from 'try-to-catch';
+import {tryToCatch} from 'try-to-catch';
 import renamify from '../lib/renamify.js';
 
 const __filename = fileURLToPath(import.meta.url);
