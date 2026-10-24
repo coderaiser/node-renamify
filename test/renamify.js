@@ -125,3 +125,15 @@ test('renamify: rename: full', async (t) => {
     
     t.end();
 });
+
+test('renamify: rename: full: to joined with dir when from is absolute', async (t) => {
+    const rename = stub();
+    const dir = '/sandbox';
+    const from = ['/sandbox/a.txt'];
+    const to = ['b.txt'];
+    
+    await renamify(dir, from, to, {rename});
+    
+    t.calledWith(rename, ['/sandbox/a.txt', path.join(dir, 'b.txt')]);
+    t.end();
+});
