@@ -46,7 +46,7 @@ await renamify(dir, from, to);
 Or with ``try-to-catch`:
 
 ```js
-import renamify from 'renamify';
+import {renamify} from 'renamify';
 import {tryToCatch} from 'try-to-catch';
 
 const dir = '/';
