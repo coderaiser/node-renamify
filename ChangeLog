@@ -1,3 +1,13 @@
+2026.10.24, v6.0.0
+
+fix:
+- 0dab5a7 renamify: isSlash -> isAbsolute
+
+feature:
+- d5c0343 renamify: export: default -> named
+- 56ad4f8 renamify: supertape v13.6.2
+- c9c4603 renamify: c8 v12.0.0
+
 2026.02.18, v5.0.0
 
 feature:
